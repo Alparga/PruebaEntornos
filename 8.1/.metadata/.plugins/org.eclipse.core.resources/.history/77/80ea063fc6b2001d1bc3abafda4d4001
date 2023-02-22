@@ -1,0 +1,19 @@
+
+package pkg8.pkg1;
+
+
+public class HoraExacta extends Hora {
+    private int segundos;
+    public HoraExacta(int Horas, int Minutos, int Segundos) {
+        super(Horas,Minutos);
+        this.segundos = Segundos;
+    }
+    public boolean setSegundos(int valor) {
+        boolean modificado = false;
+        if(valor >= 0 && valor <= 59){
+            this.segundos = valor;
+            modificado = true;
+        } 
+        return modificado;
+    }
+}

@@ -1,0 +1,2 @@
+eclipse.preferences.version=1
+quickdiff.defaultProvider=org.eclipse.egit.ui.internal.decorators.GitQuickDiffProvider

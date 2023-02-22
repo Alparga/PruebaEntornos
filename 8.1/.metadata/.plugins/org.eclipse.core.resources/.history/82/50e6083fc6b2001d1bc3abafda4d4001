@@ -1,0 +1,35 @@
+package pkg8.pkg1;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        Hora hora1 = new Hora(11, 30);
+        System.out.println(hora1.toString());
+        hora1.inc();
+        System.out.println(hora1.toString());
+        for (int i = 0; i < 40; i++) {
+            hora1.inc();
+        }
+        System.out.println(hora1.toString());
+        System.out.println("Introduzca una hora");
+        int hora = teclado.nextInt();
+        if(hora1.setHora(hora)){
+            System.out.println("Se ha podido modificar la hora.");
+            System.out.println(hora1.toString());
+        } else {
+            System.out.println("La hora indicada no es correcta, no se pudo modificar.");
+        }
+        System.out.println("Introduzca los minutos");
+        int minutos = teclado.nextInt();
+        if(hora1.setMinutos(minutos)){
+            System.out.println("Se han podido modificar los minutos.");
+            System.out.println(hora1.toString());
+        } else {
+            System.out.println("Los minutos indicados no son correctos, no se pudo modificar.");
+        }
+    }
+
+}

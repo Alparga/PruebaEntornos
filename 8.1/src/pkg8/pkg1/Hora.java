@@ -1,0 +1,69 @@
+package pkg8.pkg1;
+
+public class Hora {
+
+    private int horas;
+    private int minutos;
+
+    public Hora() {
+        this.horas = 0;
+        this.minutos = 0;
+    }
+
+    public Hora(int horas, int minutos) {
+        if (setHora(horas)) {
+            this.horas = horas;
+        } else {
+            System.out.println("Hora incorrecta, se establecera en 0");
+        }
+        if (setMinutos(minutos)) {
+            this.minutos = minutos;
+        } else {
+            System.out.println("Minutos incorrectos, se estableceran en 0");
+        }
+    }
+
+    public void inc() {
+        this.minutos++;
+        if (this.minutos > 59) {
+            this.minutos = 0;
+            this.horas++;
+
+        }
+        if (this.horas > 23) {
+            this.horas = 0;
+        }
+    }
+
+
+    public boolean setMinutos(int valor) {
+        boolean modificado = false;
+        if (valor >= 0 && valor <= 59) {
+            this.minutos = valor;
+            modificado = true;
+        }
+        return modificado;
+    }
+
+    public boolean setHora(int valor) {
+        boolean modificado = false;
+        if (valor >= 0 && valor <= 23) {
+            this.horas = valor;
+            modificado = true;
+        }
+        return modificado;
+    }
+
+    @Override
+    public String toString() {
+        return "Hora: " + horas + ":" + minutos ;
+    }
+    public int getHoras() {
+        return horas;
+    }
+
+    public int getMinutos() {
+        return minutos;
+    }
+
+}
